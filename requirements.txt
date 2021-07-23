@@ -6,5 +6,5 @@ icd10-cm==0.0.4
 icd9cms==0.2.1
 gunicorn==20.1.0
 scipy==1.7.0
-joblib @ file:///tmp/build/80754af9/joblib_1594236160679/work
+anaconda-client==1.7.2
 Werkzeug==1.0.1
