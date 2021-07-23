@@ -5,10 +5,7 @@ from icd9cms.icd9 import search
 import scipy
 from scipy.sparse import hstack
 import joblib
-import django_heroku
 
-
-# https://www.tutorialspoint.com/flask
 import flask
 app = Flask(__name__)
 
@@ -390,4 +387,3 @@ def predict():
 
 if __name__ == '__main__':
     app.run()
-django_heroku.settings(locals())
