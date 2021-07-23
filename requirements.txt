@@ -1,8 +1,0 @@
-Flask==1.1.2
-pandas>=0.25.1
-regex==2021.7.6
-requests==0.11.1
-icd10-cm==0.0.4
-icd9cms==0.2.1
-scipy==1.7.0
-joblib==1.1.0
