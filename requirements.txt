@@ -6,8 +6,5 @@ icd10-cm==0.0.4
 icd9cms==0.2.1
 gunicorn==20.1.0
 scipy==1.7.0
-conda==4.8.3
-conda-build==3.18.11
-conda-package-handling==1.7.0
-conda-verify==3.4.2
+conda==1.7.2
 Werkzeug==1.0.1
