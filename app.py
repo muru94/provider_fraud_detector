@@ -11,7 +11,7 @@ import joblib
 import flask
 app = Flask(__name__)
 
-bow_vect = joblib.load('Bow_vectorizer.pkl')
+bow_vect = joblib.load('https://github.com/muru94/provider_fraud_detector/blob/aae8a74847f6481e6ccf1330eecae151661b6dfa/Bow_vectorizer.pkl')
 Inscclmreimburse_scaler = joblib.load('Inscclmreimburse_scaler.pkl')
 clmadmitdiag_scaler = joblib.load('clmadmitdiag_scaler.pkl')
 DeductibleAmtPaid_scaler = joblib.load('DeductibleAmtPaid_scaler.pkl')
