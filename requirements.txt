@@ -9,3 +9,4 @@ scipy==1.7.0
 joblib @ git+https://github.com/joblib/joblib.git
 Werkzeug==1.0.1
 scikit-learn==0.24.2
+xgboost==1.4.0
