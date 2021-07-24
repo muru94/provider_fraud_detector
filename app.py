@@ -5,6 +5,7 @@ from icd9cms.icd9 import search
 import scipy
 from scipy.sparse import hstack
 import joblib
+import xgboost
 
 
 import flask
