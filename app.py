@@ -306,13 +306,13 @@ def final_predict(test_dict):
 
 
 @app.route('/')
-def hello_world():
-    return 'Hello World!'
-
-
-@app.route('/index')
 def index():
     return flask.render_template('index.html')
+
+
+#@app.route('/index')
+#def index():
+#    return flask.render_template('index.html')
 
 
 @app.route('/predict', methods=['POST'])
