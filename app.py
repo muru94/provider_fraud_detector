@@ -108,7 +108,7 @@ def final_predict(test_dict):
     
     test_RenalDiseaseIndicator = 1 if test_dict.get('RenalDiseaseIndicator') == 'Y' else 0
     
-    test_dodind = 0 if test_dict.get('DOD') == '0' else 1
+    test_dodind = int(test_dict.get('DOD'))
     
     # Calculating the patient age
     test_dob = pd.to_datetime(test_dict.get('DOB'))
@@ -327,12 +327,15 @@ def predict():
     renal  = str(to_predict_list['RenalDiseaseIndicator'])
     dod  = str(to_predict_list['DOD'])
     dob  = str(to_predict_list['DOB'])
+    dob = dob.split("-")[2] + "-" + dob.split("-")[1] + "-" + dob.split("-")[0]
     sex  = str(to_predict_list['Gender'])
     racecd  = str(to_predict_list['Race'])
     statecd  = str(to_predict_list['State'])
     countycd  = str(to_predict_list['County'])
     clmstart  = str(to_predict_list['ClaimStartDt'])
+    clmstart = clmstart.split("-")[2] + "-" + clmstart.split("-")[1] + "-" + clmstart.split("-")[0]
     clmend  = str(to_predict_list['ClaimEndDt'])
+    clmend = clmend.split("-")[2] + "-" + clmend.split("-")[1] + "-" + clmend.split("-")[0]
     proc1  = str(to_predict_list['ClmProcedureCode_1'])
     proc2  = str(to_predict_list['ClmProcedureCode_2'])
     proc3  = str(to_predict_list['ClmProcedureCode_3'])
