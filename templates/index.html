@@ -3,7 +3,7 @@
 <body style="background-color:lightblue;">
 <style>
 label {
-    width:280px;
+    width:320px;
     clear:left;
     text-align:left;
     padding-right:10px;
@@ -26,54 +26,309 @@ The United States has the most expensive healthcare system of any country, where
 </marquee>
 
 <div>
-  <form action="/predict" method="POST">
+  <form action="/predict" method="POST" autocomplete="off">
 
     <label for="Provider">Provider</label>
-    <input name="Provider" size="30" placeholder="PRV57425" required><br>
+    <input list="Provider" name="Provider" required/>
+    <datalist id="Provider" name="Provider">
+  		<option value="PRV57425">
+  		<option value="PRV56556">
+  		<option value="PRV55912">
+  		<option value="PRV55907">
+  		<option value="PRV54986">
+  		<option value="PRV56046">
+  		<option value="PRV51148">
+  		<option value="PRV52405">
+  		<option value="PRV55215">
+  		<option value="PRV56614">
+  		<option value="PRV55193">
+  		<option value="PRV54090">
+  		<option value="PRV51145">
+  		<option value="PRV55839">
+  		<option value="PRV52283">
+  		<option value="PRV55846">
+  		<option value="PRV56588">
+  		<option value="PRV56118">
+  		<option value="PRV57191">
+  		<option value="PRV51342">
+  		<option value="PRV54675">
+  		<option value="PRV55834">
+  		<option value="PRV54676">
+  		<option value="PRV51710">
+  		<option value="PRV51393">
+  		<option value="PRV53135">
+    </datalist>
+	<br>
 	<br>
     <label for="ClmDiagnosisCode_1">Diagnosis code1</label>
-    <input name="ClmDiagnosisCode_1" size="30" value = "0"><br>
+    <input list="ClmDiagnosisCode_1" name="ClmDiagnosisCode_1" required/>
+  	<datalist id="ClmDiagnosisCode_1" name="ClmDiagnosisCode_1">
+  		<option value="0">
+  		<option value="5185">
+  		<option value="99662">
+  		<option value="1970">
+  		<option value="6186">
+  		<option value="1745">
+  		<option value="29623">
+  		<option value="56212">
+  		<option value="43491">
+  		<option value="41041">
+  		<option value="042">
+  		<option value="03842">
+  		<option value="1536">
+  		<option value="42823">
+  		<option value="49121">
+  		<option value="29590">
+  		<option value="51881">
+  		<option value="99591">
+  		<option value="82021">
+  		<option value="42731">
+	</datalist>
+	<br>
 	<br>
     <label for="ClmDiagnosisCode_2">Diagnosis code2</label>
-    <input name="ClmDiagnosisCode_2" size="30" value = "0"><br>
+    <input list="ClmDiagnosisCode_2" name="ClmDiagnosisCode_2" required/>
+  	<datalist id="ClmDiagnosisCode_2" name="ClmDiagnosisCode_2">
+  		<option value="0">
+  		<option value="7994">
+  		<option value="40391">
+  		<option value="4091">
+  		<option value="2948">
+  		<option value="V4571">
+  		<option value="30390">
+  		<option value="25000">
+  		<option value="2762">
+  		<option value="3669">
+  		<option value="3051">
+  		<option value="25541">
+  		<option value="73300">
+  		<option value="2875">
+  		<option value="4280">
+  		<option value="2752">
+  		<option value="27651">
+  		<option value="2859">
+  		<option value="25000">
+	</datalist>
+    <br>
 	<br>
     <label for="ClmDiagnosisCode_3">Diagnosis code3</label>
-    <input name="ClmDiagnosisCode_3" size="30" value = "0"><br>
+    <input list="ClmDiagnosisCode_3" name="ClmDiagnosisCode_3" required/>
+  	<datalist id="ClmDiagnosisCode_3" name="ClmDiagnosisCode_3">
+  		<option value="0">
+  		<option value="5119">
+  		<option value="E8799">
+  		<option value="5853">
+  		<option value="56400">
+  		<option value="78702">
+  		<option value="71690">
+  		<option value="30000">
+  		<option value="7843">
+  		<option value="V851">
+  		<option value="34400">
+  		<option value="78552">
+  		<option value="7230">
+  		<option value="27651">
+  		<option value="6822">
+  		<option value="7812">
+  		<option value="2724">
+  		<option value="4659">
+  		<option value="5990">
+	</datalist>
+    <br>
 	<br>
     <label for="ClmDiagnosisCode_4">Diagnosis code4</label>
-    <input name="ClmDiagnosisCode_4" size="30" value = "0"><br>
+    <input list="ClmDiagnosisCode_4" name="ClmDiagnosisCode_4" required/>
+  	<datalist id="ClmDiagnosisCode_4" name="ClmDiagnosisCode_4">
+  		<option value="0">
+  		<option value="4821">
+  		<option value="5728">
+  		<option value="7843">
+  		<option value="34590">
+  		<option value="28521">
+  		<option value="32723">
+  		<option value="73300">
+  		<option value="5856">
+  		<option value="25062">
+  		<option value="3659">
+  		<option value="2762">
+  		<option value="40390">
+  		<option value="7245">
+  		<option value="36236">
+  		<option value="71690">
+  		<option value="7823">
+  		<option value="4241">
+  		<option value="2760">
+	</datalist>
+    <br>
 	<br>
     <label for="ClmDiagnosisCode_5">Diagnosis code5</label>
-    <input name="ClmDiagnosisCode_5" size="30" value = "0"><br>
+    <input list="ClmDiagnosisCode_5" name="ClmDiagnosisCode_5" required/>
+  	<datalist id="ClmDiagnosisCode_5" name="ClmDiagnosisCode_5">
+  		<option value="0">
+  		<option value="3819">
+  		<option value="3812">
+  		<option value="7843">
+  		<option value="2768">
+  		<option value="V1581">
+  		<option value="7019">
+  		<option value="V1041">
+  		<option value="2766">
+  		<option value="42732">
+  		<option value="V074">
+  		<option value="2859">
+  		<option value="5849">
+  		<option value="43811">
+  		<option value="60000">
+  		<option value="4019">
+  		<option value="311">
+  		<option value="V1749">
+  		<option value="5184">
+        <option value="27651">
+	</datalist>
+    <br>
 	<br>
     <label for="ClmDiagnosisCode_6">Diagnosis code6</label>
-    <input name="ClmDiagnosisCode_6" size="30" value = "0"><br>
+    <input list="ClmDiagnosisCode_6" name="ClmDiagnosisCode_6" required/>
+  	<datalist id="ClmDiagnosisCode_6" name="ClmDiagnosisCode_6">
+  		<option value="0">
+  		<option value="49121">
+  		<option value="V420">
+  		<option value="71590">
+  		<option value="32723">
+  		<option value="1963">
+  		<option value="4254">
+  		<option value="53081">
+  		<option value="486">
+  		<option value="2766">
+  		<option value="4019">
+  		<option value="5990">
+  		<option value="78322">
+  		<option value="7220">
+  		<option value="71589">
+  		<option value="99811">
+  		<option value="V4501">
+  		<option value="40390">
+  		<option value="V5866">
+	</datalist>
+    <br>
 	<br>
     <label for="ClmDiagnosisCode_7">Diagnosis code7</label>
-    <input name="ClmDiagnosisCode_7" size="30" value = "0"><br>
+    <input list="ClmDiagnosisCode_7" name="ClmDiagnosisCode_7" required/>
+  	<datalist id="ClmDiagnosisCode_7" name="ClmDiagnosisCode_7">
+  		<option value="0">
+  		<option value="486">
+  		<option value="51881">
+  		<option value="2724">
+  		<option value="25062">
+  		<option value="2948">
+  		<option value="5119">
+  		<option value="2851">
+  		<option value="2948">
+  		<option value="4019">
+  		<option value="42731">
+  		<option value="5601">
+  		<option value="2930">
+  		<option value="53081">
+  		<option value="41071">
+  		<option value="40391">
+  		<option value="25000">
+  		<option value="27651">
+  		<option value="V4581">
+	</datalist>
+    <br>
 	<br>
     <label for="ClmDiagnosisCode_8">Diagnosis code8</label>
-    <input name="ClmDiagnosisCode_8" size="30" value = "0"><br>
+    <input list="ClmDiagnosisCode_8" name="ClmDiagnosisCode_8" required/>
+  	<datalist id="ClmDiagnosisCode_8" name="ClmDiagnosisCode_8">
+  		<option value="0">
+  		<option value="34830">
+  		<option value="2753">
+  		<option value="19889">
+  		<option value="40390">
+  		<option value="25000">
+  		<option value="29620">
+  		<option value="4439">
+  		<option value="2809">
+  		<option value="4111">
+  		<option value="43310">
+  		<option value="591">
+  		<option value="71590">
+  		<option value="4019">
+  		<option value="25000">
+  		<option value="4275">
+  		<option value="V1582">
+  		<option value="41401">
+  		<option value="42732">
+	</datalist>
+    <br>
 	<br>
     <label for="ClmDiagnosisCode_9">Diagnosis code9</label>
-    <input name="ClmDiagnosisCode_9" size="30" value = "0"><br>
+    <input list="ClmDiagnosisCode_9" name="ClmDiagnosisCode_9" required/>
+  	<datalist id="ClmDiagnosisCode_9" name="ClmDiagnosisCode_9">
+  		<option value="0">
+  		<option value="4019">
+  		<option value="2875">
+  		<option value="5849">
+  		<option value="4019">
+  		<option value="25002">
+  		<option value="20300">
+  		<option value="41401">
+  		<option value="56210">
+  		<option value="4589">
+  		<option value="V6284">
+  		<option value="51881">
+  		<option value="2859">
+  		<option value="30523">
+  		<option value="4148">
+  		<option value="4239">
+  		<option value="41012">
+  		<option value="85011">
+  		<option value="25000">
+	</datalist>
+    <br>
 	<br>
     <label for="ClmDiagnosisCode_10">Diagnosis code10</label>
-    <input name="ClmDiagnosisCode_10" size="30" value = "0"><br>
+    <input list="ClmDiagnosisCode_10" name="ClmDiagnosisCode_10" required/>
+  	<datalist id="ClmDiagnosisCode_10" name="ClmDiagnosisCode_10">
+  		<option value="0">
+  		<option value="E8490">
+  		<option value="42732">
+  		<option value="32723">
+  		<option value="30981">
+  		<option value="V153">
+  		<option value="V4364">
+  		<option value="34570">
+  		<option value="30500">
+  		<option value="4019">
+  		<option value="7140">
+  		<option value="920">
+  		<option value="30390">
+  		<option value="78959">
+  		<option value="5856">
+  		<option value="78829">
+  		<option value="73300">
+  		<option value="2851">
+	</datalist>
+    <br>
 	<br>
-    <label for="RenalDiseaseIndicator">Renal Disease Indicator</label>
+    <label for="RenalDiseaseIndicator">Renal Disease Indicator (Yes-Y, No-0) </label>
     <select type="text" name="RenalDiseaseIndicator" required>
-  	<option value="Y">Y</option>
   	<option value="0">0</option>
+  	<option value="Y">Y</option>
     </select>
 	<br>
 	<br>
-    <label for="DOD">DOD</label>
-    <input name="DOD" size="30" placeholder="0 or Date Format: DD-MM-YYYY " required><br>
+    <label for="DOD">DOD (Yes-1, No-0)</label>
+    <select type="text" name="DOD" required>
+  	<option value="0">0</option>
+  	<option value="1">1</option>
+    </select>
 	<br>
+    <br>
     <label for="DOB">DOB</label>
-    <input name="DOB" size="30" placeholder="Date Format: DD-MM-YYYY " required><br>
+    <input type="date" id="DOB" name="DOB" value="1930-01-01" required>
 	<br>
+    <br>
     <label for="Gender">Gender</label>
     <select type="text" name="Gender" required>
   	<option value="1">1</option>
@@ -97,91 +352,151 @@ The United States has the most expensive healthcare system of any country, where
     <input name="County" size="30" placeholder="XXX - 2 or 3 digits" required><br>
 	<br>
     <label for="ClaimStartDt">Claim Start date</label>
-    <input name="ClaimStartDt" size="30" placeholder="Date Format: DD-MM-YYYY " required><br>
+    <input type="date" id="ClaimStartDt" name="ClaimStartDt" value="2009-01-01" required>
+	<br>
 	<br>
     <label for="ClaimEndDt">Claim End date</label>
-    <input name="ClaimEndDt" size="30" placeholder="Date Format: DD-MM-YYYY " required><br>
+    <input type="date" id="ClaimEndDt" name="ClaimEndDt" value="2009-01-01" required>
+	<br>
 	<br>   
     <label for="ClmProcedureCode_1">Procedure code1</label>
-    <input name="ClmProcedureCode_1" size="30" value = "0"><br>
+    <input list="ClmProcedureCode_1" name="ClmProcedureCode_1" required/>
+  	<datalist id="ClmProcedureCode_1" name="ClmProcedureCode_1">
+  		<option value="0">
+  		<option value="9672">
+  		<option value="9749">
+  		<option value="863">
+  		<option value="7092">
+  		<option value="9904">
+  		<option value="331">
+  		<option value="3612">
+  		<option value="3893">
+  		<option value="9672">
+  		<option value="4576">
+  		<option value="9671">
+  		<option value="9904">
+  		<option value="7935">
+  		<option value="66">
+  		<option value="8801">
+  		<option value="8872">
+	</datalist>
+    <br>
 	<br>
     <label for="ClmProcedureCode_2">Procedure code2</label>
-    <input name="ClmProcedureCode_2" size="30" value = "0"><br>
+    <input list="ClmProcedureCode_2" name="ClmProcedureCode_2" required/>
+  	<datalist id="ClmProcedureCode_2" name="ClmProcedureCode_2">
+  		<option value="0">
+  		<option value="4139">
+  		<option value="4019">
+  		<option value="2724">
+  		<option value="5185">
+  		<option value="7904">
+  		<option value="311">
+  		<option value="5849">
+  		<option value="3570">
+  		<option value="2762">
+  		<option value="7830">
+  		<option value="4441">
+  		<option value="7876">
+  		<option value="2724">
+  		<option value="5845">
+  		<option value="5781">
+	</datalist>
+    <br>
 	<br>
     <label for="ClmProcedureCode_3">Procedure code3</label>
-    <input name="ClmProcedureCode_3" size="30" value = "0"><br>
+    <input list="ClmProcedureCode_3" name="ClmProcedureCode_3" required/>
+  	<datalist id="ClmProcedureCode_3" name="ClmProcedureCode_3">
+  		<option value="0">
+  		<option value="4019">
+  		<option value="2724">
+  		<option value="7963">
+  		<option value="5185">
+  		<option value="4439">
+  		<option value="3009">
+  		<option value="9972">
+  		<option value="570">
+  		<option value="5533">
+  		<option value="5849">
+  		<option value="2724">
+  		<option value="9982">
+  		<option value="3572">
+  		<option value="4439">
+  		<option value="5184">
+	</datalist>
+    <br>
 	<br>
-    <label for="ChronicCond_Alzheimer">Chronic Condition of Alzheimer</label>
+    <label for="ChronicCond_Alzheimer">Chronic Cond of Alzheimer (Yes-2, No-1)</label>
     <select type="text" name="ChronicCond_Alzheimer" required>
   	<option value="1">1</option>
   	<option value="2">2</option>
     </select>
 	<br>
 	<br>
-    <label for="ChronicCond_Heartfailure">Chronic Condition of Heart failure</label>
+    <label for="ChronicCond_Heartfailure">Chronic Cond of Heart failure (Yes-2, No-1)</label>
     <select type="text" name="ChronicCond_Heartfailure" required>
   	<option value="1">1</option>
   	<option value="2">2</option>
     </select>
 	<br>
 	<br>
-    <label for="ChronicCond_KidneyDisease">Chronic Condition of Kidney Disease</label>
+    <label for="ChronicCond_KidneyDisease">Chronic Cond of Kidney Disease (Yes-2, No-1)</label>
     <select type="text" name="ChronicCond_KidneyDisease" required>
   	<option value="1">1</option>
   	<option value="2">2</option>
     </select>
 	<br>
 	<br>
-    <label for="ChronicCond_Cancer">Chronic Condition of Cancer</label>
+    <label for="ChronicCond_Cancer">Chronic Cond of Cancer (Yes-2, No-1)</label>
     <select type="text" name="ChronicCond_Cancer" required>
   	<option value="1">1</option>
   	<option value="2">2</option>
     </select>
 	<br>
 	<br>
-    <label for="ChronicCond_ObstrPulmonary">Chronic Condition of ObstrPulmonary</label>
+    <label for="ChronicCond_ObstrPulmonary">Chronic Cond of ObstrPulmonary (Yes-2, No-1)</label>
     <select type="text" name="ChronicCond_ObstrPulmonary" required>
   	<option value="1">1</option>
   	<option value="2">2</option>
     </select>
 	<br>
 	<br>
-    <label for="ChronicCond_Depression">Chronic Condition of Depression</label>
+    <label for="ChronicCond_Depression">Chronic Cond of Depression (Yes-2, No-1)</label>
     <select type="text" name="ChronicCond_Depression" required>
   	<option value="1">1</option>
   	<option value="2">2</option>
     </select>
 	<br>
 	<br>
-    <label for="ChronicCond_Diabetes">Chronic Condition of Diabetes</label>
+    <label for="ChronicCond_Diabetes">Chronic Cond of Diabetes (Yes-2, No-1)</label>
     <select type="text" name="ChronicCond_Diabetes" required>
   	<option value="1">1</option>
   	<option value="2">2</option>
     </select>
 	<br>
 	<br>
-    <label for="ChronicCond_IschemicHeart">Chronic Condition of Ischemic Heart</label>
+    <label for="ChronicCond_IschemicHeart">Chronic Cond of Ischemic Heart (Yes-2, No-1)</label>
     <select type="text" name="ChronicCond_IschemicHeart" required>
   	<option value="1">1</option>
   	<option value="2">2</option>
     </select>
 	<br>
 	<br>
-    <label for="ChronicCond_Osteoporasis">Chronic Condition of Osteoporasis</label>
+    <label for="ChronicCond_Osteoporasis">Chronic Cond of Osteoporasis (Yes-2, No-1)</label>
     <select type="text" name="ChronicCond_Osteoporasis" required>
   	<option value="1">1</option>
   	<option value="2">2</option>
     </select>
 	<br>	
 	<br>
-    <label for="ChronicCond_rheumatoidarthritis">Chronic Condition of rheumatoidarthritis</label>
+    <label for="ChronicCond_rheumatoidarthritis">Chronic Cond of rheumatoidarthritis (Yes-2, No-1)</label>
     <select type="text" name="ChronicCond_rheumatoidarthritis" required>
   	<option value="1">1</option>
   	<option value="2">2</option>
     </select>
 	<br>
 	<br>
-    <label for="ChronicCond_stroke">Chronic Condition of stroke</label>
+    <label for="ChronicCond_stroke">Chronic Cond of stroke (Yes-2, No-1)</label>
     <select type="text" name="ChronicCond_stroke" required>
   	<option value="1">1</option>
   	<option value="2">2</option>
@@ -210,10 +525,50 @@ The United States has the most expensive healthcare system of any country, where
 	<br>
 	<br>
     <label for="ClmAdmitDiagnosisCode">Claim Admit diagnosis code</label>
-    <input name="ClmAdmitDiagnosisCode" size="30" value = "0"><br>
+    <input list="ClmAdmitDiagnosisCode" name="ClmAdmitDiagnosisCode" required/>
+  	<datalist id="ClmAdmitDiagnosisCode" name="ClmAdmitDiagnosisCode">
+  		<option value="0">
+  		<option value="5180">
+  		<option value="486">
+  		<option value="7866">
+  		<option value="6186">
+  		<option value="1749">
+  		<option value="29590">
+  		<option value="78605">
+  		<option value="431">
+  		<option value="41401">
+  		<option value="78321">
+  		<option value="29590">
+  		<option value="5699">
+  		<option value="49121">
+  		<option value="2859">
+  		<option value="51881">
+  		<option value="29570">
+	</datalist>
+    <br>
 	<br>
     <label for="DiagnosisGroupCode">Diagnosis Group Code</label>
-    <input name="DiagnosisGroupCode" size="30" value = "0"><br>
+    <input list="DiagnosisGroupCode" name="DiagnosisGroupCode" required/>
+  	<datalist id="DiagnosisGroupCode" name="DiagnosisGroupCode">
+  		<option value="0">
+  		<option value="205">
+  		<option value="227">
+  		<option value="201">
+  		<option value="750">
+  		<option value="597">
+  		<option value="883">
+  		<option value="379">
+  		<option value="067">
+  		<option value="262">
+  		<option value="975">
+  		<option value="857">
+  		<option value="390">
+  		<option value="876">
+  		<option value="294">
+  		<option value="202">
+  		<option value="030">
+	</datalist>
+    <br>
 	<br>
     <label for="InscClaimAmtReimbursed">Reimbursed amount</label>
     <input name="InscClaimAmtReimbursed" size="30" value = "0" required><br>
