@@ -312,7 +312,7 @@ def final_predict(test_dict):
 
 @app.route('/')
 def index():
-    return flask.render_template('provider.html')
+    return flask.render_template('index.html')
 
 
 @app.route('/predict', methods=['POST'])
