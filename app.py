@@ -7,10 +7,30 @@ from scipy.sparse import hstack
 import joblib
 import xgboost
 
-
 import flask
 app = Flask(__name__)
 
+bow_vect = joblib.load('Bow_vectorizer.pkl')
+Inscclmreimburse_scaler = joblib.load('Inscclmreimburse_scaler.pkl')
+clmadmitdiag_scaler = joblib.load('clmadmitdiag_scaler.pkl')
+DeductibleAmtPaid_scaler = joblib.load('DeductibleAmtPaid_scaler.pkl')
+DiagnosisGroupCode_scaler = joblib.load('DiagnosisGroupCode_scaler.pkl')
+ClmDiagnosisCode_scaler = joblib.load('ClmDiagnosisCode_scaler.pkl')
+ClmProcCode_scaler = joblib.load('ClmProcCode_scaler.pkl')
+race_scaler = joblib.load('race_scaler.pkl')
+state_scaler = joblib.load('state_scaler.pkl')
+county_scaler = joblib.load('county_scaler.pkl')
+Annualreimburse_scaler = joblib.load('Annualreimburse_scaler.pkl')
+Annualdeduct_scaler = joblib.load('Annualdeduct_scaler.pkl')
+patientage_scaler = joblib.load('patientage_scaler.pkl')
+treatmentdays_scaler = joblib.load('treatmentdays_scaler.pkl')
+treatmentmonth_scaler = joblib.load('treatmentmonth_scaler.pkl')
+treatmentdate_scaler = joblib.load('treatmentdate_scaler.pkl')
+noofdiagcode_scaler = joblib.load('noofdiagcode_scaler.pkl')
+noofproccode_scaler = joblib.load('noofproccode_scaler.pkl')
+sumchronic_scaler = joblib.load('sumchronic_scaler.pkl')
+noofphysiciansconsult_scaler = joblib.load('noofphysiciansconsult_scaler.pkl')
+model = joblib.load('model.pkl')
 
 def final_predict(test_dict):
     
@@ -195,22 +215,16 @@ def final_predict(test_dict):
     Gender = 0 if test_dict.get('Gender') == '2' else 1 # mapping gender code 2->0 and 1->1
     
     # loading the pre-trained Countvectorizer and transform on test data
-    bow_vect = joblib.load('Bow_vectorizer.pkl')
     test_diagnosisdesc = bow_vect.transform(preprocessed_dia)
     
-    Inscclmreimburse_scaler = joblib.load('Inscclmreimburse_scaler.pkl')
     test_Insreimburse = Inscclmreimburse_scaler.transform([[int(test_dict.get('InscClaimAmtReimbursed'))]])
     
-    clmadmitdiag_scaler = joblib.load('clmadmitdiag_scaler.pkl')
     test_admitdiagnosis = clmadmitdiag_scaler.transform([[ClmAdmitDiagnosisCode]])
     
-    DeductibleAmtPaid_scaler = joblib.load('DeductibleAmtPaid_scaler.pkl')
     test_deductamt = DeductibleAmtPaid_scaler.transform([[int(test_dict.get('DeductibleAmtPaid'))]])
     
-    DiagnosisGroupCode_scaler = joblib.load('DiagnosisGroupCode_scaler.pkl')
     test_diagnosisgroup = DiagnosisGroupCode_scaler.transform([[DiagnosisGroupCode]])
     
-    ClmDiagnosisCode_scaler = joblib.load('ClmDiagnosisCode_scaler.pkl')
     test_diagcode1 = ClmDiagnosisCode_scaler.transform([[ClmDiagnosisCode_1]])
     
     test_diagcode2 = ClmDiagnosisCode_scaler.transform([[ClmDiagnosisCode_2]])
@@ -231,50 +245,36 @@ def final_predict(test_dict):
     
     test_diagcode10 = ClmDiagnosisCode_scaler.transform([[ClmDiagnosisCode_10]])
     
-    ClmProcCode_scaler = joblib.load('ClmProcCode_scaler.pkl')
     test_proccode1 = ClmProcCode_scaler.transform([[int(test_dict.get('ClmProcedureCode_1'))]])
     
     test_proccode2 = ClmProcCode_scaler.transform([[int(test_dict.get('ClmProcedureCode_2'))]])
     
     test_proccode3 = ClmProcCode_scaler.transform([[int(test_dict.get('ClmProcedureCode_3'))]])
     
-    race_scaler = joblib.load('race_scaler.pkl')
     test_race = race_scaler.transform([[int(test_dict.get('Race'))]])
     
-    state_scaler = joblib.load('state_scaler.pkl')
     test_state = state_scaler.transform([[int(test_dict.get('State'))]])
     
-    county_scaler = joblib.load('county_scaler.pkl')
     test_county = county_scaler.transform([[int(test_dict.get('County'))]])
     
-    Annualreimburse_scaler = joblib.load('Annualreimburse_scaler.pkl')
     test_annualreimburse = Annualreimburse_scaler.transform([[int(test_dict.get('AnnualReimbursementAmt'))]])
     
-    Annualdeduct_scaler = joblib.load('Annualdeduct_scaler.pkl')
     test_annualdeduct = Annualdeduct_scaler.transform([[int(test_dict.get('AnnualDeductibleAmt'))]])
     
-    patientage_scaler = joblib.load('patientage_scaler.pkl')
     test_patientage = patientage_scaler.transform([[patientage]])
     
-    treatmentdays_scaler = joblib.load('treatmentdays_scaler.pkl')
     test_treatmentdays = treatmentdays_scaler.transform([[treatmentdays]])
     
-    treatmentmonth_scaler = joblib.load('treatmentmonth_scaler.pkl')
     test_treatmentmonth = treatmentmonth_scaler.transform([[treatmentmonth]])
     
-    treatmentdate_scaler = joblib.load('treatmentdate_scaler.pkl')
     test_treatmentdate = treatmentdate_scaler.transform([[treatmentdate]])
     
-    noofdiagcode_scaler = joblib.load('noofdiagcode_scaler.pkl')
     test_noofdigcode = noofdiagcode_scaler.transform([[NoofDigcode]])
     
-    noofproccode_scaler = joblib.load('noofproccode_scaler.pkl')
     test_noofproccode = noofproccode_scaler.transform([[NoofProccode]])
     
-    sumchronic_scaler = joblib.load('sumchronic_scaler.pkl')
     test_sumchronic = sumchronic_scaler.transform([[sumchronic]])
     
-    noofphysiciansconsult_scaler = joblib.load('noofphysiciansconsult_scaler.pkl')
     test_noofpysicians = noofphysiciansconsult_scaler.transform([[noofphysiciansconsulted]])
     
     test_gender = scipy.sparse.csr_matrix(Gender)
@@ -300,9 +300,6 @@ def final_predict(test_dict):
                         test_dodind, test_chronic1, test_chronic2, test_chronic3, test_chronic4, test_chronic5, test_chronic6, test_chronic7,
                         test_chronic8, test_chronic9, test_chronic10, test_chronic11)).tocsr()
     
-    
-    model = joblib.load('model.pkl')
-        
     y_pred = model.predict(test_comb) # Predicting provider fraudulent status for test data
     
     return y_pred
@@ -312,12 +309,6 @@ def final_predict(test_dict):
 @app.route('/')
 def index():
     return flask.render_template('index.html')
-
-
-#@app.route('/provider')
-#def index():
-#    return flask.render_template('provider.html')
-
 
 @app.route('/predict', methods=['POST'])
 def predict():
